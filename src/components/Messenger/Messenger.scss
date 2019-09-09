@@ -615,6 +615,23 @@ $flexDisplay: flex;
     right: 22px;
 }
 
+.contactProfileDiv {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    img {
+        width: 20vh;
+        margin: 10px 30px 30px 30px;
+        align-self: center;
+        border-radius: 50%;
+    }
+  }
+
 
 .searchIcon {
     font-size: 1.1rem !important;

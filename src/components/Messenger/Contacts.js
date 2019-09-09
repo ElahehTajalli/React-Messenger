@@ -1,12 +1,13 @@
 import React from 'react'
 import axios from 'axios'
-import { getMessageList, getConversationId, getUsername } from '../../action/Conversation'
+import { getMessageList, getConversationId, getUsername, getContactProfile } from '../../action/Conversation'
 
 export default class Conversation extends React.Component {
 
   getMessageList () {
     this.props.dispatch((getConversationId(this.props.conversations[this.props.item].id)))
     this.props.dispatch((getUsername(this.props.name, this.props.lastName, this.props.email, this.props.image)))
+    this.props.dispatch(getContactProfile(this.props.conversations[this.props.item].users[this.props.index]))
 
     const fdata = new FormData()
     fdata.append('token', window.localStorage.getItem('token'))

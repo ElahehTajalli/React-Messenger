@@ -58,7 +58,8 @@ const initial = {
   background: image1,
   alt: 'backGround',
   conversations: [],
-  messages: []
+  messages: [],
+  profile: ''
 }
 
 const conversation = (state = initial, action) => {
@@ -135,6 +136,11 @@ const conversation = (state = initial, action) => {
       return {
         ...state,
         id: action.id
+      }
+    case 'GET_CONTACT_PROFILE' :
+      return {
+        ...state,
+        profile: action.profile
       }
 
     default:

@@ -49,3 +49,8 @@ export const getConversationId = (id) => ({
   type: 'GET_CONVERSATION_ID',
   id: id
 })
+
+export const getContactProfile = (profile) => ({
+  type: 'GET_CONTACT_PROFILE',
+  profile: profile
+})

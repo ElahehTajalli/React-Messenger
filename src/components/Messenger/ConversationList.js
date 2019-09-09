@@ -63,6 +63,7 @@ export default class ConversationList extends React.Component {
                       preview={item.preview}
                       unseen={item.unseen}
                       item={index}
+                      index={contactIndex}
                     />
                   )
                 } else {
@@ -87,6 +88,7 @@ export default class ConversationList extends React.Component {
                     lastName={''}
                     email={item.users[contactIndex].email}
                     item={index}
+                    index={contactIndex}
                   />
                 )
               })}

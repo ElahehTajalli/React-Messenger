@@ -4,12 +4,14 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuIcon from '@material-ui/icons/Menu'
 import Search from '@material-ui/icons/Search'
+import Modal from '@material-ui/core/Modal'
 
 export default class ContactProfile extends React.Component {
   constructor () {
     super()
     this.state = {
-      menu: null
+      menu: null,
+      showContactProfile: false
     }
   }
 
@@ -19,6 +21,14 @@ export default class ContactProfile extends React.Component {
 
   menuClose () {
     this.setState({ menu: null })
+  }
+
+  showContactProfile () {
+    this.setState({ menu: null, showContactProfile: true })
+  }
+
+  hideContactProfile () {
+    this.setState({ showContactProfile: false })
   }
 
   searchLong () {
@@ -60,6 +70,7 @@ export default class ContactProfile extends React.Component {
   }
 
   render () {
+    console.log('pro', this.props.profile)
     return (
       <>
         <div className='status'>
@@ -93,9 +104,28 @@ export default class ContactProfile extends React.Component {
           onClose={() => this.menuClose()}
         >
           <MenuItem onClick={() => this.menuClose()}>Add to Contacts</MenuItem>
-          <MenuItem onClick={() => this.menuClose()}>view profile</MenuItem>
+          <MenuItem onClick={() => this.showContactProfile()}>view profile</MenuItem>
           <MenuItem onClick={() => this.menuClose()}>block</MenuItem>
         </Menu>
+
+        <Modal
+          className='modalStyle'
+          aria-labelledby='simple-modal-title'
+          aria-describedby='simple-modal-description'
+          open={this.state.showContactProfile}
+          onClose={() => this.hideContactProfile()}
+        >
+          <div className='editModal'>
+            <span><b> Profile </b> </span>
+            <div className='contactProfileDiv'>
+              <img src={this.props.profile.avatar_url} />
+              <span>name: {this.props.profile.name}</span>
+              <span>email: {this.props.profile.email}</span>
+              <span>bio: {this.props.profile.description}</span>
+              <span>phone number: {this.props.profile.description}</span>
+            </div>
+          </div>
+        </Modal>
       </>
     )
   }
