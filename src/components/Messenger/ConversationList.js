@@ -61,7 +61,7 @@ export default class ConversationList extends React.Component {
                       time={item.latest_message_date}
                       email={item.users[contactIndex].email}
                       preview={item.preview}
-                      unseen={item.unseen}
+                      unseen={item.unseen_messages[window.localStorage.getItem('id')]}
                       item={index}
                       index={contactIndex}
                     />

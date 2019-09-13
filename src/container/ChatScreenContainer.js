@@ -5,7 +5,8 @@ const mapStateToProps = (state) => ({
   firstName: state.firstName,
   lastName: state.lastName,
   email: state.email,
-  image: state.image
+  image: state.image,
+  id: state.id
 })
 
 export default connect(mapStateToProps)(ChatScreen)

@@ -33,6 +33,7 @@ export default class Conversation extends React.Component {
   }
 
   render () {
+    console.log('ssssss', this.props.unseen)
     return (
       <div className='conversation'
         // onClick={() => this.props.dispatch(getUsername(this.props.name, this.props.lastName, this.props.email, this.props.image))}
@@ -48,7 +49,9 @@ export default class Conversation extends React.Component {
 
           <div className='name-date'>
             <span className='fontSize preview'>{this.props.preview}</span>
-            <span className='unseen'>{this.props.unseen}</span>
+            {this.props.unseen !== 0 &&
+              <span className='unseen'>{this.props.unseen}</span>
+            }
           </div>
         </div>
       </div>

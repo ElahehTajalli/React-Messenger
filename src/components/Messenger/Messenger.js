@@ -8,7 +8,7 @@ export default class Messenger extends React.Component {
   constructor () {
     super()
     this.state = {
-      escMode: false
+      escMode: true
     }
     this.escFunction = this.escFunction.bind(this)
     this.escFunctionClose = this.escFunctionClose.bind(this)

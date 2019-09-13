@@ -59,7 +59,8 @@ const initial = {
   alt: 'backGround',
   conversations: [],
   messages: [],
-  profile: ''
+  profile: '',
+  id: ''
 }
 
 const conversation = (state = initial, action) => {
